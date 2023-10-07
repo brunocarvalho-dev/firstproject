@@ -1,10 +1,66 @@
 package com.loiane.cursojava.exercicios_14_15;
 
+import java.text.DecimalFormat;
+
 public class Exercicio_12 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		DecimalFormat df = new DecimalFormat("#,###.00");
+		
+		////Variaveis
+		double ir = 0.0;
+		double extraHour = 0.0;
+		
+		
+		String payHour = JOptionPane.showInputDialog("Digite o salário/ hora");
+		payHour = payHour.replace(",",".");
+		Double payForHOur = Double.parseDouble(payHour);
+		String hourMonth = JOptionPane.showInputDialog("Digite as horas trabalhadas no mês");
+		hourMonth = hourMonth.replace(",",".");
+		Double hourForMonth = Double.parseDouble(hourMonth);
+		
+		Double grossSalary = payForHOur*hourForMonth;
+		
+		double sindicato = grossSalary*0.03;
+		double fgts = grossSalary*0.11;
+		
+		/////Horas Extras
+		if (hourForMonth > 220) {
+			extraHour = (hourForMonth-220)*2*payForHOur;
+			grossSalary += extraHour;
+			
+		}
+		/////Imposto IR
+		if(grossSalary <= 900) {
+			ir = 0.0;
+		}else if(grossSalary<= 1500) {
+			ir = (grossSalary*0.05);
+		}else if(grossSalary <= 2500) {
+			ir = (grossSalary*0.1);
+		}else if(grossSalary < Double.MAX_VALUE) {
+			ir = (grossSalary*0.2);
+		}
+		
+		/////transformando valores
+		String payForHourStr = df.format(payForHOur);
+		String grossSalaryStr = df.format(grossSalary);
+		String extHour = df.format(extraHour);
+		String irStr = df.format(ir);
+		String fgtsStr = df.format(fgts);		
+		String sindicatoStr = df.format(sindicato);
+		String liqSalary = df.format(grossSalary - ir - sindicato);
+		
+		/////Imprimindo tela
+		JOptionPane.showMessageDialog(null, 
+					"Folha de Pagamento\n"
+				+ "\nSalário por hora R$ " + payForHOur
+				+ "\nHoras trabalhadas mês: " + hourForMonth 
+				+ "\nSalário Bruto: R$" + grossSalaryStr
+				+ "\nHoras Extras R$ " + extHour
+				+ "\nSindicato R$ -" + sindicatoStr
+				+ "\nFGTS R$ -" + fgtsStr
+				+ "\nImposto (IR) R$ - " + irStr
+				+ "\nSalário Liquido : R$" + liqSalary);
 	}
 
 }
