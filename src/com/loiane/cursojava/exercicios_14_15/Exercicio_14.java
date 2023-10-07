@@ -1,10 +1,64 @@
 package com.loiane.cursojava.exercicios_14_15;
 
+import javax.swing.JOptionPane;
+
 public class Exercicio_14 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		String nota ="", def ="";
+		Double nota1Db = 0.0;
+		Double nota2Db = 0.0;
+		double media = 0.0;
+		boolean valid = true;
+		
+		do {
+			String nota1 = (JOptionPane.showInputDialog("Digite a primeira nota!"));
+			nota1Db = Double.parseDouble(nota1.replace(",","."));
+			String nota2 = (JOptionPane.showInputDialog("Digite a segunda nota!"));
+			nota2Db = Double.parseDouble(nota2.replace(",","."));
+			
+			media = (nota1Db+nota2Db)/2;
+			if((media < 0)||(media > 10)) {
+				String opt = JOptionPane.showInputDialog(null, "Valor invalido!\nDeseja digitar novamente?\n\n (Y) ou (N)");
+				opt = opt.substring(0,1);
+				opt = opt.toLowerCase();
 
+				switch (opt) {
+				case "n":valid = false;
+					break;
+				default:valid = true;
+					break;
+				}
+			}else {
+				valid = false;
+			}
+			
+		}while(valid);
+		
+		
+		
+		if(media <=4) {
+			nota = "E";
+			def = "Reprovado";
+		}else if(media <=6) {
+			nota = "D";
+			def = "Reprovado";
+		}else if(media <= 7.5) {
+			nota = "C";
+			def = "Aprovado";
+		}else if(media <= 9) {
+			nota = "B";
+			def = "Aprovado";
+		}else if(media <= 10) {
+			nota = "A";
+			def = "Aprovado";
+		}
+		JOptionPane.showInternalMessageDialog(null, "A média do aluno: "+media
+				+ "\nA primeira nota:  "+ nota1Db
+				+ "\nA segunda nota: " + nota2Db
+				+ "\nO aluno receneu nota: "+ nota
+				+ "\nO aluno está "+ def);
 	}
 
 }
