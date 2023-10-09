@@ -6,15 +6,49 @@ public class Exercicio_15 {
 
 	public static void main(String[] args) {
 	
-		Double[] side = new Double [3];
-	
-		for (int i = 0; i<3 ; i++) {
-			String input = JOptionPane.showInputDialog("Digite o lado "+ (i+1)+" do triangulo: ");
+		
+		Double [] size = new Double[3];
+		
+		
+
+		boolean valid = true;
+		do{
+			
+			for (int i = 0; i < 3; i++) {
+		
+			String input = JOptionPane.showInputDialog("Digite o lado"+ (i+1) + " do triangulo: ");
 			input = input.replace(",",".");
-			side[i] = Double.valueOf(input);
-		}
-		if((side[0] == side[1]) and (side[1] == side[2]){
-			JOptionPane.showMessageDialog("Triangulo tem o três lados iguais\nTriangulo EQUILATERO");
+			size [i] = Double.valueOf(input);	
+			}
+			if((
+					((size[0] <= 0) && (size[0] < size[1] + size[2])) || 
+					((size[1] <= 0) && (size[1] < size[0] + size[2])) || 
+					((size[2] <= 0) && (size[2] < size[0] + size[1]))
+			   )) {
+				String teste = JOptionPane.showInputDialog(null, "Valor inválido!\nDeseja digitar novamente?");
+				teste = teste.substring(0,1);
+				if(teste.equalsIgnoreCase("N")) {
+					valid = false;
+					break;
+				}else {
+					continue;
+				}
+			}else {
+				valid = false;
+
+			}
+		
+		}while (valid);
+		
+
+		
+		
+		if(size[0] == (size[0] + size[1] + size[2])/3) {
+			JOptionPane.showMessageDialog(null, "Esse triangula é : Equilátero");
+		}else if((size[0] == size[1]) || (size[0] == size[2]) || (size[1] == size[2])) {
+			JOptionPane.showMessageDialog(null, "Esse triangulo é: Isóceles");
+		}else {
+			JOptionPane.showMessageDialog(null, "Esse triangulo é: Escaleno");
 		}
 
 	}
