@@ -1,9 +1,21 @@
 package com.loiane.cursojava.exercicios_14_15;
 
+import javax.swing.JOptionPane;
+
 public class Exercicio_15 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+		Double[] side = new Double [3];
+	
+		for (int i = 0; i<3 ; i++) {
+			String input = JOptionPane.showInputDialog("Digite o lado "+ (i+1)+" do triangulo: ");
+			input = input.replace(",",".");
+			side[i] = Double.valueOf(input);
+		}
+		if((side[0] == side[1]) and (side[1] == side[2]){
+			JOptionPane.showMessageDialog("Triangulo tem o três lados iguais\nTriangulo EQUILATERO");
+		}
 
 	}
 
