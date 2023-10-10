@@ -7,7 +7,7 @@ public class Exercicio_15 {
 	public static void main(String[] args) {
 	
 		
-		Double [] size = new Double[3];
+		Double [] lado = new Double[3];
 		
 		
 
@@ -18,12 +18,12 @@ public class Exercicio_15 {
 		
 			String input = JOptionPane.showInputDialog("Digite o lado"+ (i+1) + " do triangulo: ");
 			input = input.replace(",",".");
-			size [i] = Double.valueOf(input);	
+			lado [i] = Double.valueOf(input);	
 			}
 			if((
-					((size[0] <= 0) && (size[0] < size[1] + size[2])) || 
-					((size[1] <= 0) && (size[1] < size[0] + size[2])) || 
-					((size[2] <= 0) && (size[2] < size[0] + size[1]))
+					((lado[0] <= 0) && (lado[0] < lado[1] + lado[2])) || 
+					((lado[1] <= 0) && (lado[1] < lado[0] + lado[2])) || 
+					((lado[2] <= 0) && (lado[2] < lado[0] + lado[1]))
 			   )) {
 				String teste = JOptionPane.showInputDialog(null, "Valor inválido!\nDeseja digitar novamente?");
 				teste = teste.substring(0,1);
@@ -43,9 +43,9 @@ public class Exercicio_15 {
 
 		
 		
-		if(size[0] == (size[0] + size[1] + size[2])/3) {
+		if(lado[0] == (lado[0] + lado[1] + lado[2])/3) {
 			JOptionPane.showMessageDialog(null, "Esse triangula é : Equilátero");
-		}else if((size[0] == size[1]) || (size[0] == size[2]) || (size[1] == size[2])) {
+		}else if((lado[0] == lado[1]) || (lado[0] == lado[2]) || (lado[1] == lado[2])) {
 			JOptionPane.showMessageDialog(null, "Esse triangulo é: Isóceles");
 		}else {
 			JOptionPane.showMessageDialog(null, "Esse triangulo é: Escaleno");
