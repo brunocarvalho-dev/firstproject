@@ -1,10 +1,24 @@
 package com.loiane.cursojava.exercicios_14_15;
 
+import javax.swing.JOptionPane;
+
 public class Exercicio_20 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+        int [] notas = new int[3];
+        double media = 0;
+        for (int i = 0; i < notas.length; i++ ){
+            String input = JOptionPane.showInputDialog("Digite a nota "+ (i+1) + " do aluno");
+            notas[i] = Integer.parseInt(input);
+            media += notas[i];
+        }
 
+        media = (media/ notas.length);
+        if (media >= 7){
+            JOptionPane.showMessageDialog(null, "Aluno APROVADO com média final "+media);
+        }else {
+            JOptionPane.showMessageDialog(null, "Aluno REPROVADO média final " + media);
+        }
 	}
 
 }
