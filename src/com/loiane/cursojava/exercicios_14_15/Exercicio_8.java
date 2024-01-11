@@ -2,7 +2,7 @@ package com.loiane.cursojava.exercicios_14_15;
 
 import java.util.Scanner;
 
-public class Ezercicio_8 {
+public class Exercicio_8 {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner (System.in);

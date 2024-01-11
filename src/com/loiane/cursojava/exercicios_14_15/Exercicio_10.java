@@ -2,7 +2,7 @@ package com.loiane.cursojava.exercicios_14_15;
 
 import javax.swing.JOptionPane;
 
-public class Exercico_10 {
+public class Exercicio_10 {
 
 	public static void main(String[] args) {
 		String turno ="";
