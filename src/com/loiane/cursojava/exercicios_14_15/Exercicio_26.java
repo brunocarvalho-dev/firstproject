@@ -11,6 +11,7 @@ public class Exercicio_26 {
 		boolean validation = true;
 		double litros = 0;
 		String combustivel = "";
+		
 		do 
 		{
 			String litrosStr = JOptionPane.showInputDialog("Quantos litros deseja abastecer?", "Combustivel em Litros");
