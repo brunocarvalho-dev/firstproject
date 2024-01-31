@@ -2,7 +2,7 @@ package com.loiane.cursojava.exercicios_16_17;
 
 import javax.swing.JOptionPane;
 
-public class Exercicio_3 {
+public class Exercicio_03 {
 
 	public static void main(String[] args) {
 		

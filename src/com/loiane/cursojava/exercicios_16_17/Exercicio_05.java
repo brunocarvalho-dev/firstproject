@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
-public class Execicio_5 {
+public class Exercicio_05 {
 
 	public static void main(String[] args) {
 		String padraoDecimal = "###,##0";
@@ -99,7 +99,7 @@ public class Execicio_5 {
 		boolean validation = true;
 		do
 		{
-			String jurosStr = JOptionPane.showInputDialog("Digite a taxa de juros da populaão A em porcentagem");
+			String jurosStr = JOptionPane.showInputDialog("Digite a taxa de juros da população A em porcentagem");
 			juros = Double.parseDouble(jurosStr.replace(",", "."));
 			
 			ok = (JOptionPane.showInputDialog("Digite 'S' para confirmar o valor do juros\nA taxa é de " + juros + " %"));

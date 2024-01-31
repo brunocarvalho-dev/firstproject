@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 import javax.swing.JOptionPane;
 
-public class Exercicio_4 {
+public class Exercicio_04 {
 
 	public static void main(String[] args) {
 		String padraoDecimal = "###,##0";
